@@ -15,7 +15,10 @@ function CatalogItems({ id, name, age }) {
 function App() {
   const [catalog, setCatalog] = useState([]);
   const getCatalog = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/v1/catalog/");
+    // const response = await fetch("http://127.0.0.1:8000/api/v1/catalog/");
+    const response = await fetch(
+      "https://luisavalosmaker-api.onrender.com/api/v1/catalog/"
+    );
     const data = await response.json();
     console.log(data);
     setCatalog(data);
